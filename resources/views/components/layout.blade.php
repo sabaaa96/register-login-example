@@ -15,5 +15,6 @@
     </head>
     <body class="antialiased">
         {{ $slot }}
+        @livewireScripts
     </body>
 </html>
