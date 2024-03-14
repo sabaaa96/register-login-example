@@ -28,6 +28,3 @@ Route::get('/login', function () {
 Route::get('/home', function () {
     return view('dashboard');
 })->middleware('auth');
-
-
-
