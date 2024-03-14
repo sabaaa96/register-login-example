@@ -8,10 +8,11 @@
         <div class="border-b border-gray-900/10 pb-12">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"> 
 
-                <div class="sm:col-span-3">
-                    <label for="salutation" class="block text-sm font-medium leading-6 text-gray-900">Anrede</label>
+                <div class="sm:col-span-3 sm:col-start-1">
+                    <label for="salutation" class="block text-sm font-medium leading-6 text-gray-900">Anrede <span class="text-red-500">*</span></label>
                     <div class="mt-2">
                     <select id="salutation" wire:model="salutation" name="salutation" autocomplete="salutation" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <option selected>Wählen Sie Ihre Anrede aus</option>
                         <option>Frau</option>
                         <option>Herr</option>
                         <option>Divers</option>
@@ -20,87 +21,36 @@
                     <div>@error('salutation') {{ $message }} @enderror</div>
                 </div>
                 
-
-                    <div class="sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Vorname</label>
-                        <div class="mt-2">
-                            <input type="text" name="first-name" id="first-name" wire:model="firstname" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                        <div>@error('firstname') {{ $message }} @enderror</div>
+                <div class="sm:col-span-3 sm:col-start-1">
+                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Vorname <span class="text-red-500">*</span></label>
+                    <div class="mt-2">
+                        <input type="text" name="first-name" id="first-name" wire:model="firstname" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
+                    <div>@error('firstname') {{ $message }} @enderror</div>
+                </div>
                 
 
                 <div class="sm:col-span-3">
-                    <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Nachname</label>
+                    <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Nachname <span class="text-red-500">*</span></label>
                     <div class="mt-2">
                         <input type="text" name="last-name" id="last-name" wire:model="lastname" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                     <div>@error('lastname') {{ $message }} @enderror</div>
                 </div>
 
-                <div class="sm:col-span-2 sm:col-start-1">
-                    <label for="birthdate" class="block text-sm font-medium leading-6 text-gray-900">Geburtsdatum</label>
+                <div class="sm:col-span-3 sm:col-start-1">
+                    <label for="birthdate" class="block text-sm font-medium leading-6 text-gray-900">Geburtsdatum <span class="text-red-500">*</span></label>
                     <div class="mt-2">
-                        <input type="date" id="birthdate" name="birthdate" wire:model="birthdate" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <input type="date" id="birthdate" name="birthdate" wire:model="birthdate" class="shadow appearance-none border ring-1  ring-gray-300 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:ring-indigo-600 focus:outline-none focus:shadow-outline">
                     </div>
                     <div>@error('birthdate') {{ $message }} @enderror</div>
                 </div>
 
-            
-                <div class="sm:col-span-2 sm:col-start-1">
-                    <label for="street" class="block text-sm font-medium leading-6 text-gray-900">Straße, Hausnummer</label>
-                    <div class="mt-2">
-                        <input type="text" name="street" id="street" wire:model="street" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    <div>@error('street') {{ $message }} @enderror</div>
-                </div>
-
-                <div class="sm:col-span-2">
-                    <label for="postalcode" class="block text-sm font-medium leading-6 text-gray-900">PLZ</label>
-                    <div class="mt-2">
-                        <input type="text" name="postalcode" id="postalcode" wire:model="postalcode" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    <div>@error('postalcode') {{ $message }} @enderror</div>
-                </div>
-
-                <div class="sm:col-span-2">
-                    <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Ort</label>
-                    <div class="mt-2">
-                        <input type="text" name="city" id="city" wire:model="city" autocomplete="city" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    <div>@error('city') {{ $message }} @enderror</div>
-                </div>
-
-                <div class="sm:col-span-3">
-                    <label for="phone-number" class="block text-sm font-medium leading-6 text-gray-900">Telefonnummer</label>
-                    <div class="mt-2">
-                        <input type="number" name="phone-number" id="phone-number" wire:model="phonenumber" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    <div>@error('phonenumber') {{ $message }} @enderror</div>
-                </div>
-
-                <div class="sm:col-span-3">
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email-Adresse</label>
-                    <div class="mt-2">
-                        <input id="email" name="email" type="email" wire:model="email" autocomplete="email" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    <div>@error('email') {{ $message }} @enderror</div>
-                </div>
-
-                <div>
-                    <div class="flex items-center justify-between">
-                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                    </div>
-                    <div class="mt-2">
-                    <input id="password" name="password" type="password" wire:model="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                    <div>@error('password') {{ $message }} @enderror</div>
-                </div>
-
-                <div class="sm:col-span-3">
-                    <label for="citizenship" class="block text-sm font-medium leading-6 text-gray-900">Staatsbürgerschaft</label>
+                <div class="sm:col-span-3 sm:col-start-1">
+                    <label for="citizenship" class="block text-sm font-medium leading-6 text-gray-900">Staatsbürgerschaft <span class="text-red-500">*</span></label>
                     <div class="mt-2">
                     <select id="citizenship" name="citizenship" wire:model="citizenship" autocomplete="citizenship" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <option selected>Wählen Sie Ihre Staatsbürgerschaft aus</option>
                         <option>Deutschland</option>
                         <option>Italien</option>
                         <option>Spanien</option>
@@ -110,11 +60,66 @@
                     </div>
                     <div>@error('citizenship') {{ $message }} @enderror</div>
                 </div>
+
+                <div class="sm:col-span-2 sm:col-start-1">
+                    <label for="street" class="block text-sm font-medium leading-6 text-gray-900">Straße, Hausnummer <span class="text-red-500">*</span></label>
+                    <div class="mt-2">
+                        <input type="text" name="street" id="street" wire:model="street" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div>@error('street') {{ $message }} @enderror</div>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="postalcode" class="block text-sm font-medium leading-6 text-gray-900">PLZ <span class="text-red-500">*</span></label>
+                    <div class="mt-2">
+                        <input type="text" name="postalcode" id="postalcode" wire:model="postalcode" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div>@error('postalcode') {{ $message }} @enderror</div>
+                </div>
+
+                <div class="sm:col-span-2">
+                    <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Ort <span class="text-red-500">*</span></label>
+                    <div class="mt-2">
+                        <input type="text" name="city" id="city" wire:model="city" autocomplete="city" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div>@error('city') {{ $message }} @enderror</div>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <label for="phone-number" class="block text-sm font-medium leading-6 text-gray-900">Telefonnummer <span class="text-red-500">*</span></label>
+                    <div class="mt-2">
+                        <input type="number" name="phone-number" id="phone-number" wire:model="phonenumber" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div>@error('phonenumber') {{ $message }} @enderror</div>
+                </div>
+
+                <div class="sm:col-span-3 sm:col-start-1">
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email-Adresse <span class="text-red-500">*</span></label>
+                    <div class="mt-2">
+                        <input id="email" name="email" type="email" wire:model="email" autocomplete="email" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div>@error('email') {{ $message }} @enderror</div>
+                </div>
+
+                <div class="sm:col-span-3">
+                    <div class="flex items-center justify-between">
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password <span class="text-red-500">*</span></label>
+                    </div>
+                    <div class="mt-2">
+                    <input id="password" name="password" type="password" wire:model="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div>@error('password') {{ $message }} @enderror</div>
+                </div>
+
+                <div class="text-sm mt-4">
+                    <p class="text-gray-600"><span class="text-red-500">*</span> Pflichtfelder</p>
+                </div>
+
             </div>
         </div>
-            <div class="mt-4 flex items-center justify-end gap-x-6">
-                <button type="button" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Abbrechen</button>
-                <button type="submit" class="rounded-md bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registrieren</button>
-            </div>
+                <div class="mt-4 flex items-center justify-end gap-x-6">
+                    <button type="button" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Abbrechen</button>
+                    <button type="submit" class="rounded-md bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registrieren</button>
+                </div>
     </form>
 </div>
